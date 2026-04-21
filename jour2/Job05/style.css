@@ -1,0 +1,19 @@
+  * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: rgb(22, 144, 108);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 4096px;
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        height: 10vh;
+        width: 100vw;
+    }
