@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job02</title>
+</head>
+
+<body>
+
+</body>
+
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: rgb(22, 144, 108);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column-reverse;
+    }
+
+    button {
+        background-color: rgb(55, 199, 156);
+        height: 80px;
+        width: 200px;
+        border: 4px solid aliceblue;
+        border-radius: 24px;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.267);
+        color: aliceblue;
+        font-size: larger;
+        font-weight: 500;
+        transition: transform 0.2s ease-in-out, background-color 0.4s ease-in;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+
+    }
+
+    button:active {
+        background-color: rgb(23, 88, 69);
+        transition: transform 0.1s ease-in-out, background-color 0.1s ease-in;
+        transform: scale(1.2);
+    }
+
+    p {
+
+        position: absolute;
+        color: aliceblue;
+        margin-bottom: 200px;
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    @keyframes fondu {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script src="script.js"></script>
