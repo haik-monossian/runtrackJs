@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job 03</title>
+    <style>
+        :root {
+            --primary: #ef4444;
+            --primary-hover: #dc2626;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input,
+        select {
+            padding: 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid var(--primary);
+            border-color: transparent;
+        }
+
+        #filtrer {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        #filtrer:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #results {
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .pokemon-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .pokemon-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pokemon-card h3 {
+            margin: 0.5rem 0;
+            color: var(--primary);
+        }
+
+        .pokemon-card .id {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .pokemon-card .types {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .type-badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            color: #475569;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <form id="filterForm">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" id="id" placeholder="Ex: 25">
+            </div>
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="nom" placeholder="Ex: Pikachu">
+            </div>
+            <div class="form-group full-width">
+                <label for="type">Type</label>
+                <select id="type">
+                    <option value="">Tous les types</option>
+                    <option value="Grass">Grass</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Flying">Flying</option>
+                    <option value="Water">Water</option>
+                    <option value="Bug">Bug</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Ground">Ground</option>
+                    <option value="Fairy">Fairy</option>
+                    <option value="Fighting">Fighting</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Steel">Steel</option>
+                    <option value="Ice">Ice</option>
+                    <option value="Ghost">Ghost</option>
+                    <option value="Dragon">Dragon</option>
+                    <option value="Dark">Dark</option>
+                </select>
+            </div>
+            <input type="button" id="filtrer" value="Filtrer" class="full-width">
+        </form>
+    </div>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
